@@ -1,0 +1,116 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Mosaico Stellare: Cassini</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> -->
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,500,700" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+
+    <style>
+       
+
+    </style>
+  </head>
+  <body>
+
+
+    <div id="container">
+
+          <div id="storyBG" class="ui">
+            <div id="loading">loading</div>
+
+           <div id="intro" >
+            <p class="title">MOSAICO STELLARE<br></p>
+            <p class="big">Art &amp; Science project inspired by the Cassini Mission<br>and a few verses from Robert Frost’s poem "A-Wishing Well"</p>
+            <p class="miniTitle" >From the point of view of the Cassini spacecraft, everyday words such as <br>SKY, WORLD, JOURNEY and MOON assume a rather different meaning.<br><br>
+The project, in collaboration with astrophysics expert Dr. Antonio Garufi,<br> offers a springboard for exploring the relative nature of these fundamental concepts, while learning about the nearly 20-year long Cassini Mission<br>and its amazing discoveries on its way to Saturn. </p>
+            <br><br>
+            <p class="gap">
+            <br><br><br><br><br><br></p>
+            <p class="small" ><img class="imgNasa" src="img/nasa.png"></img><span class="tos">from the Cassini Gran Finale gallery</span><p>
+            <p class="small tos"><span style = "font-size: 15px" >SOUND RECOMMENDED</p><br>
+
+            <div id="instructions"><p>START<br>EXPLORING</p></div>
+            <p class="medium desktop"></p>
+            <p class="small mobile mm" style = "display:none">- Needs Wifi or broadband connection<br>- Best view on desktop</p>
+            <div class="footer">an interactive <a href="http://worthknowing.org/" target="_blank">Worth Knowing production</a> | Sound: <a href="http://www.emiliopozzolini.com/" target="_blank">Emilio Pozzolini</a></div>
+          </div>
+          
+          <div id="animation" class ="anim" style = "display:none">
+            <p class ="anim"><br>COLORS</p><p style = "font-size:24px; margin-top: -50px">INTERACTIVE ANIMATION</p>
+          </div>
+
+        </div>
+          
+        <div id="quality" class="ui top" style = "display:none">
+                <!-- <p id="back"class="small"><span style = "font-size: 15px" >EXPERIENCE</p> -->
+                <button class="btn btnInfo" onclick="infoBox()" >INFO</button><br>
+                <div class="btn btnQuality q1" onclick="qualityCheck(1,range1, letter, size1, depth1, 1, 1)" id="focusQ">LOW RES</div>
+                  <!-- <br><p class ="mini">STANDARD VIEW</p> -->
+                <div class="btn btnQuality q3" onclick="qualityCheck(3,range3, letter, size3, depth2, 2, 1)" >HIGH RES</div>
+                <div class="btn btnQuality q4" onclick="qualityCheck(4,range4, letter, size4, depth2, 2, 6)" >COLORS <span id="dopeTimeout"></span></div><br> 
+                  <img class="soundIco s0" src="img/sound_no.svg" onclick="playSound(sound)" style = "display:none"></img> 
+                  <img class="soundIco s1" src="img/sound.svg" onclick="playSound(sound)" id="focusP" ></img> 
+
+            </div>
+          <div id="menuScene" class="ui bottom" style = "display:none">
+
+
+              <div class="btn btnScene sA" onclick="changeScene('A')" id="focusS" ><span class="tooltiptext">SKY</span>
+              <span class="ttHover">SKY</span><span class="ttClicked ssA">SKY</span></div>
+              <div class="btn btnScene sB" onclick="changeScene('B')" ><span class="tooltiptext">WORLD</span>
+              <span class="ttHover">WORLD</span><span class="ttClicked ssB" >WORLD</span></div>
+              <div class="btn btnScene sC" onclick="changeScene('C')" ><span class="tooltiptext">JOURNEY</span>
+              <span class="ttHover">JOURNEY</span><span class="ttClicked ssC">JOURNEY</span></div>
+              <div class="btn btnScene sD" onclick="changeScene('D')" ><span class="tooltiptext">MOONS</span>
+              <span class="ttHover">MOONS</span><span class="ttClicked ssD">MOONS</span></div>
+             <!--  <div class="btn btnScene sE" onclick="changeScene('E')" ><span class="tooltiptext">SATURN</span>
+              <span class="ttHover">SATURN</span><span class="ttClicked ssE">SATURN</span></div> -->
+              
+          </div>
+
+
+          
+          <div id="closeTxt"><p style="font-size:14px;">BACK</p></div>
+          <div id="mobileTouch" class="ui" style = "display:none">
+          <div id="mobileTouchPad" ><p class="mobileText" style="font-size:24px; color:white;">HOLD<br><span style="font-size:14px;">and move slowly!</span></p>
+            <div id="mobileCircle"></div><p class="mobileText" style="font-size:14px; color:white">Interaction is very simple,<br>please check it on desktop!</p></div>
+          </div>
+          <div id="loadBar">
+              <div id="myBar"></div>
+            </div>
+          </div>
+          
+        <div id="cont">
+
+        </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tween.min.js"></script>
+    <script src="js/chroma.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/stats.min.js"></script>
+    <!-- <script src='js/THREEx.KeyboardState.js'></script> -->
+    <script src="js/dataSheet.js"></script> 
+    <script src="js/interaction.js"></script>  
+    <script src="js/cassini.js"></script>   
+    <script src="js/index.js"></script>  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72002303-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72002303-1');
+</script>
+
+
+
+  </body>
+  </html>
